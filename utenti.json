@@ -1,6 +1,26 @@
 {
-  "utente1": {"password": "password1", "info": "Informazioni Utente 1"},
-  "utente2": {"password": "password2", "info": "Informazioni Utente 2"},
-  "utente3": {"password": "password3", "info": "Informazioni Utente 3"},
-  "utente4": {"password": "password4", "info": "Informazioni Utente 4"}
+  "utente1": {
+    "password": "password1",
+    "info": "Informazioni Utente 1"
+  },
+  "utente2": {
+    "password": "password2",
+    "info": "Informazioni Utente 2"
+  },
+  "utente3": {
+    "password": "password3",
+    "info": "Informazioni Utente 3"
+  },
+  "utente4": {
+    "password": "password4",
+    "info": "Informazioni Utente 4"
+  },
+  "bogos binted": {
+    "password": "slorp",
+    "info": "Nuovo utente"
+  },
+  "asdfasf": {
+    "password": "a",
+    "info": "Nuovo utente"
+  }
 }

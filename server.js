@@ -24,6 +24,10 @@ app.get('/', (req, res) => {
   res.render('login');
 });
 
+app.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
 // Gestione del login
 app.post('/login', (req, res) => {
   const username = req.body.username;
@@ -48,18 +52,18 @@ app.post('/signup', (req, res) => {
     const utenti = JSON.parse(fs.readFileSync('utenti.json', 'utf-8'));
 
     // Verifica se l'utente esiste già
+    
+    // Aggiungi il nuovo utente
+    utenti[username] = { password: password, info: 'Nuovo utente' };
+    
+    // Scrivi l'oggetto aggiornato nel file utenti.json
+    fs.writeFileSync('utenti.json', JSON.stringify(utenti, null, 2));
+    
+    // Reindirizza all'area riservata dopo la registrazione
     if (utenti[username]) {
       res.redirect('/'); // O gestisci il caso in cui l'utente esista già
       return;
     }
-
-    // Aggiungi il nuovo utente
-    utenti[username] = { password: password, info: 'Nuovo utente' };
-
-    // Scrivi l'oggetto aggiornato nel file utenti.json
-    fs.writeFileSync('utenti.json', JSON.stringify(utenti, null, 2));
-
-    // Reindirizza all'area riservata dopo la registrazione
     res.redirect('/');
   } catch (error) {
     console.error('Errore durante la registrazione:', error);
